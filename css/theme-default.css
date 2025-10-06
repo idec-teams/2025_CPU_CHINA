@@ -127,7 +127,7 @@ textarea:focus{
 	outline-color:transparent;
 }
 
-a,i, cite, em, var, address, dfn,ol,li,ul{
+a, cite, var, address, dfn,ol,li,ul{
 	font-style:normal;
 	font-weight:400;
 }
@@ -135,33 +135,33 @@ a,i, cite, em, var, address, dfn,ol,li,ul{
 
 
 *::-moz-selection {
-    background:#3399FF;
-    color: #fff;
+    background:#bfbfbf;
+    color: #222;
     text-shadow: none;
 }
 ::-moz-selection {
-    background: #3399FF;
-    color: #fff;
+    background: #bfbfbf;
+    color: #222;
     text-shadow: none;
 }
 ::selection {
-    background:#3399FF;
-    color: #f00;
+    background:#bfbfbf;
+    color: #222;
     text-shadow: none;
 }
 
 ::placeholder {
-    color: #f00;
+    color: #222;
     font-size: 16px;
 }
 ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     
-    color: #f00;
+    color: #222;
 }
 ::-moz-placeholder {
     /* Firefox 19+ */    
-    color: #fff;
+    color: #222;
 }
 :-ms-input-placeholder {
     /* IE 10+ */

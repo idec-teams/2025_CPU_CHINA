@@ -1,10 +1,10 @@
 
 body{
-	color: #8B8D92;
+	color: #1f1f1f;
 	font-size: 16px;
 	font-weight: bold;
 	font-family: 'Montserrat', sans-serif;
-	line-height: 1.5;
+	line-height: 1.8;
 }
 h1, h2, h3, h4, h5, h6{
 	color: #33065B;
@@ -32,10 +32,12 @@ h6{
 }
 p{
     font-family: 'Merriweather', sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-size: 20px;
     line-height: 1.8;
 }
+
+
 /* Links 
 ------------------------------------ */
 a{
@@ -45,6 +47,7 @@ a{
 	-moz-transition: 0.2s;
 	-o-transition: 0.2s;
 	transition: 0.2s;
+    letter-spacing: -0.75px ;
 }
 a:hover{
 	text-decoration: none;
@@ -502,7 +505,7 @@ html{
     margin-top: -103px;
 }
 .slider-area {
-    background: #3C2A58 ;
+    background-image: url(../image/index_pymol_2.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -510,6 +513,15 @@ html{
     position: relative;
 }
 
+.slider-area::before {
+    content: ""; /* 必须添加content属性 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 42, 88, 0.8);
+}
 
 /*======Lines=====*/
 
@@ -1371,6 +1383,74 @@ html{
 
 
 /* =============Feature Section Start============= */
+/*circle*/
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #811B73;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+}
+/* Sticky 导航 */
+.custom-row {
+  display: flex;            /* 用 flex 代替 float + overflow */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.custom-col-left {
+  width: 250px;
+  flex-shrink: 0;           /* 防止被压缩 */
+}
+
+.custom-col-right {
+  flex: 1;
+  padding-left: 20px;
+}
+
+/* 保留导航栏核心样式 */
+.nav-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.left-nav-outside{
+  width: 250px;
+  height: 700px;
+  position: sticky;
+  top: 100px;
+  display: block;
+  align-self: flex-start;
+}
+
+.nav-sidebar {
+  width: 250px;
+  height: 800px;
+  overflow-y: auto;
+}
+
+/* 响应式处理 */
+@media (max-width: 768px) {
+  .custom-col-left {
+    width: 0;
+    display: none;
+    float: none;
+  }
+  .custom-col-right {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  /* 移动端导航栏处理 */
+  .nav-sidebar {
+    position: relative;
+    top: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
 .feature-content {
     margin-top: -70px;
     background: transparent;
@@ -1437,9 +1517,70 @@ html{
 }
 /* =============Feature Section end============= */
 
+/* =============Table Section Start============= */
+.table-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            font-family: 'Merriweather', sans-serif;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+        th {
+            font-weight: 600;
+            border-top: 3px solid #000;
+            border-bottom: 3px solid #000;
+        }
+        .enzyme-type {
+            font-weight: 600;
+        }
+
+        .caption {
+            margin-top: 15px;
+            color: #666;
+            text-align: center;
+        }
+
+                /* 为每种酶类型的最后一行添加底部粗边框 */
+        .enzyme-group-end {
+            border-bottom: 2px solid #000;
+        }
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+
+/* =============img box Section ============= */
+ .imgbox {
+    width: 100%;
+    margin: 35px 0;
+    text-align: center;
+    max-width:750px;
+     }
+
+.imgbox img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+}
 /* =============About Section Start============= */
 .about-section{
-	padding: 100px 0px 100px 0px;
+	padding: 50px 20px 50px 20px;
     background-color: rgba(162, 41, 161,.1);
     position: relative;
     overflow: hidden;
@@ -1456,7 +1597,7 @@ html{
 	align-items: center;
 }
 .about-section .left-content{
-    padding: 0px 34px 0px 0px;
+    padding: 17px 34px 17px 34px;
 }
 
 .about-section .top-content{
@@ -1468,9 +1609,12 @@ html{
     margin-bottom: 17px;
 }
 
-
-
-
+.about-section p{
+    line-height: 1.8;
+    text-align:justify;
+	text-justify:inter-word;
+    font-size: 22px;
+}
 
 .about-section .bottom-content .left-side .card-content .single-cird{
     border: 1px solid #A229A1;
@@ -1724,11 +1868,12 @@ html{
 
 /* ======================team section start========================== */
 .team-section{
-    background-color: rgba(162, 41, 161,.2);
-    padding: 100px 0px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 50px 0px 20px;
     position: relative;
     overflow: hidden;
 }
+
 .team-section .star-image{
     position: absolute;
     left: 0;
@@ -1758,9 +1903,33 @@ html{
     padding: 0px 0px 7px;
 }
 
+.team-advisor{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 50px 0px 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0px 0px 7px;
+    margin-top: 30px;
+}
 
+.team-degicnation p{
+    color: rgb(139, 141, 146);
+    font-size: 16px;
+    line-height: 1.5;
+}
 
-.team-section .single-team .team-contant .team-image:before{
+.team-advisor .team-title h3{
+    color: #33065B;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 18px;
+}
+
+.team-section .single-team .team-contant .team-image::before{
     content: "";
     width: 100%;
     height: 100%;
@@ -1771,32 +1940,63 @@ html{
     left: 0;
     transition: all 300ms linear 0s;
     visibility: visible;
+    z-index: 1;
 }
-
-.team-section .single-team .team-contant .team-image:after {
-    content: "";
-    width: 139%;
-    height: 86%;
-    /* border-radius: 50%; */
-    box-shadow: 100px 0 0 #ffffff03 inset, 0 100px 0 rgb(255 255 255 / 1%) inset, -100px 0 0 rgb(255 255 255 / 1%) inset, 0 -100px 0 rgb(255 255 255 / 1%) inset;
-    position: absolute;
-    top: -16px;
-    left: -16px;
-    bottom: 0;
-    transition: all 300ms linear 0s;
-    visibility: visible;
-    transform: rotate(90deg);
-}
-
 
 .team-section .single-team:hover .team-contant .team-image:after, .team-section .single-team:hover .team-contant .team-image:before {
-    box-shadow: 5px 0 0 rgb(255 255 255 / 50%) inset, 0 5px 0 rgb(255 255 255 / 50%) inset, -5px 0 0 rgb(255 255 255 / 50%) inset, 0 -5px 0 rgb(255 255 255 / 50%) inset;
+    background: rgba(72, 12, 72, 0.95);
 }
 
+/* 文字层容器 */
+.team-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 2; /* 确保在遮罩上方 */
+  opacity: 0; /* 初始隐藏 */
+  transform: translateY(20px); /* 初始下移 */
+  transition: all 400ms ease 100ms; /* 带延迟的动画 */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 悬停时显示文字层 */
+.team-section .single-team:hover .team-overlay {
+  opacity: 1;
+  transform: translateY(0); /* 上移归位 */
+}
+
+/* 文字样式 */
+.team-overlay .member-name {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.team-overlay .member-title {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
 
 .team-section .single-team .team-contant .team-image img{
-    width: 100%;
+    aspect-ratio: 1/1;    /* 强制1:1正方形 */
+    max-width: 280px;
 }
+
+.team-advisor img{
+    aspect-ratio: 1/1;    /* 强制1:1正方形 */
+    max-width: 280px;
+}
+
 .team-section .single-team .team-contant .team-title h3{
     color: #33065B;
     font-size: 20px;
@@ -1837,7 +2037,18 @@ html{
     transition: .5s;
 }
 
+.intro-content {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 20px 30px;
+}
 
+.intro-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #222;
+}
 /* ======================team section end========================== */
 
 /* =============feature section end============= */
@@ -2075,6 +2286,7 @@ html{
 
 
 /* ======================footer section start========================== */
+
 .footer-section{
 	background-position: center;
 	background-repeat: no-repeat;
@@ -2146,7 +2358,7 @@ html{
 .footer-section h2{
 	color: #D1BCDB;
 	font-size: 24px;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 	margin-top: 20px;
 }
 .footer-section .link ul li{
@@ -2215,7 +2427,7 @@ html{
 	height: 1px;
 	width: 100%;
 	background-color: #D1BCDB;
-	margin: 25px 0px;
+	margin: 10px 0px;
 }
 
 .footer-section .bar2{
@@ -2846,7 +3058,7 @@ html{
     left: 0;
     top: 0;
     z-index: -1;
-    width: 30%;
+    width: 25%;
     height: 100%;
     background-color: rgba(162, 41, 161,.1);
     background-repeat: no-repeat;
@@ -4051,11 +4263,6 @@ start search Popup Css
     line-height: 42px;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: all 0.9s ease-out 0s;
-    -moz-transition: all 0.9s ease-out 0s;
-    -ms-transition: all 0.9s ease-out 0s;
-    -o-transition: all 0.9s ease-out 0s;
-    transition: all 0.9s ease-out 0s;
     border-radius: 10px; 
 }
 .scroll-area .go-top i {
@@ -4083,7 +4290,7 @@ start search Popup Css
     }
 .scroll-area .go-top::before {
     content: "";
-    border: 2px solid #A229A1;
+    border: 2px solid #353284;
     position: absolute;
     z-index: 0;
     left: 50%;
@@ -4094,8 +4301,8 @@ start search Popup Css
     height: 130px;
     border-radius: 50%;
     animation: zoomBig 3.25s linear infinite;
-    -webkit-animation-delay: .75s;
-    animation-delay: .75s;
+    -webkit-animation-delay: .25s;
+    animation-delay: .25s;
 }
 .scroll-area .go-top:focus, .scroll-area .go-top:hover {
       color: #fff; 
@@ -4115,6 +4322,7 @@ start search Popup Css
         top: 50%; 
 }
 .scroll-area .go-top.active {
+    /* 使gotop按钮初始不可见，但在滚动屏幕后出现(active) */
     top: 95%;
     -webkit-transform: translateY(-98%);
     -moz-transform: translateY(-98%);
@@ -4140,7 +4348,7 @@ start search Popup Css
     top: 3px;
     z-index: 1;
     background-image: -moz-linear-gradient(0deg, #d1651a 0%, #c1282a 100%);
-    background: #A229A1;
+    background: #743F94;
     background-image: -ms-linear-gradient(0deg, #d1651a 0%, #c1282a 100%);
 }
  .top-wrap .go-top-button i {
@@ -4166,7 +4374,7 @@ start search Popup Css
     animation-delay: 0s;
 }
 .top-wrap .go-top-button:hover {
-    background-color: #FFD737;
+    background-color: #B95D92;
     color: #fff;
 }
 
